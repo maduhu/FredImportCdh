@@ -34,7 +34,6 @@ import com.ipcglobal.fredimport.util.FredUtils;
 import com.ipcglobal.fredimport.util.LogTool;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class TsvsToImpala.
  */
@@ -150,14 +149,14 @@ public class TsvsToImpala {
 		String jdbcImpalaLogin = this.properties.getProperty("jdbcImpalaLogin").trim();
 		String jdbcImpalaPassword = this.properties.getProperty("jdbcImpalaPassword").trim();
 
-		String databaseName = "dbfred";
-		String tableName = "tbfred";
+		String databaseNameFred = this.properties.getProperty("databaseNameFred").trim();
+		String tableNameFred = properties.getProperty("tableNameFred");
 		String stageTableSuffix = "_staging";
 		Connection con = null;
 		Statement statement = null;
 		
-		String databaseTableName = databaseName + "." + tableName;
-		String databaseStageTableName = databaseName + "." + tableName + stageTableSuffix;
+		String databaseTableName = databaseNameFred + "." + tableNameFred;
+		String databaseStageTableName = databaseNameFred + "." + tableNameFred + stageTableSuffix;
 				 
 		try {
 
